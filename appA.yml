@@ -1,13 +1,13 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: appA
+  name: app
 spec:
   replicas: 6
   template:
     metadata:
       labels:
-        app: appA
+        app: app
     spec:
       containers:
       - name: nginx
@@ -18,9 +18,9 @@ kind: Service
 metadata:
   name: svc_appA
   labels:
-    app: appA
+    app: app
 spec:
   ports:
     - port: 80
   selector:
-    app: appA
+    app: app
